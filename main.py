@@ -1,21 +1,13 @@
-numbers = [12, 34, 40, 87, 99]
+import sortingFunctions
 
-searchNumber = int(input("Provide searched number: "))
+numSize = int(input("Please specify array size: "))
+numSet = []
 
-foundNumber = 0
-first = 0
-last = len(numbers) - 1
+sortingFunctions.dataInput(numSet, numSize)
+print("Before sorting: ")
+sortingFunctions.printData(numSet, numSize)
 
-while (first <= last):
-    mid = int((first + last)/2)
-    if (searchNumber == numbers[mid]):
-        print("Array contains number: ", searchNumber)
-        foundNumber = 1
-        break
-    elif (searchNumber < numbers[mid]):
-        last = mid - 1
-    else:
-        first = mid + 1
+sortingFunctions.sortData(numSet, numSize)
 
-if (foundNumber == 0):
-    print("Array does not contain number ", searchNumber)
+print("After sorting: ")
+sortingFunctions.printData(numSet, numSize)
